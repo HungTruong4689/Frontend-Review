@@ -1,0 +1,7 @@
+p{
+    text-align: center;
+}
+/*
+This does not work for centering entire block elements.
+text-align controls only alignment of inline content like text in its parent block element.
+*/
