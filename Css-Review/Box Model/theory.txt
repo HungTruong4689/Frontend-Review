@@ -1,0 +1,5 @@
+content-box: width and height of the element only includes content area.
+padding-box: width and height of the element includes content and padding.
+border-box: width and height of the element includes content, padding, and border
+initial: sets the box model to its default state
+inherit: inherits the box model of the parent element
