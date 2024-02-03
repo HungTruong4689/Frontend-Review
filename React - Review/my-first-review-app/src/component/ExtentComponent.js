@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 
+//PrintHello Component
 const PrintHello = ComposedComponent => class extends Component{
     onClick(){
         console.log("hello")
