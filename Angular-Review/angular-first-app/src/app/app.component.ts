@@ -9,4 +9,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   //Writing the title
   title = 'angular-first-app';
+  description = 'Hello World';
 }
