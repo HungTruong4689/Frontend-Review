@@ -19,3 +19,12 @@ export class NameComponent implements OnInit {
 type Animal = 'Cheetah' | 'Lion';
 
 const animal: Animal = 'Cheetah';
+
+//enum
+enum BrandsReduced {
+  Tesla = 1,
+  GMC,
+  Jeep,
+}
+
+const myTruck: BrandsReduced = BrandsReduced.GMC; // yields 2
