@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class NameComponent implements OnInit {
   constructor() {}
   brand: string = 'Chervolet'; //string type
+  obj = {
+    a: 3,
+  };
 
   ngOnInit() {}
 }
