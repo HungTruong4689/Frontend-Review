@@ -14,3 +14,8 @@ export class NameComponent implements OnInit {
 
   ngOnInit() {}
 }
+
+//Custom types
+type Animal = 'Cheetah' | 'Lion';
+
+const animal: Animal = 'Cheetah';
