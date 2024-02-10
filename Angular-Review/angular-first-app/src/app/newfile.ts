@@ -63,3 +63,12 @@ function greetMe2(name: string, greeting: string = 'Hello'): string {
 function greetPeople(greeting: string, ...names: string[]): string {
   return greeting + names.join('and') + '!';
 }
+
+//Arrow function
+const double = (x: number) => x * 2;
+
+//Common TypeScript feature
+//Spread parameter
+const newItem = 3;
+const oldArray = [1, 2];
+const newArray = [...oldArray, newItem];
