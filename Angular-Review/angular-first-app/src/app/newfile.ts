@@ -42,3 +42,13 @@ function sayHello(name: string): string {
 const sayHello2: (name: string) => string = function (name: string): string {
   return 'Hello, ' + name;
 };
+
+//Optional parameters
+// ? symbol as a postfix to the parameter name we want to make optional
+function greetMe(name: string, greeting?: string): string {
+  if (!greeting) {
+    greeting = 'Hello';
+  }
+
+  return greeting + ', ' + name;
+}
