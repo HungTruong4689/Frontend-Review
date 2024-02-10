@@ -58,3 +58,8 @@ function greetMe(name: string, greeting?: string): string {
 function greetMe2(name: string, greeting: string = 'Hello'): string {
   return greeting + ', ' + name;
 }
+
+//Rest parameters
+function greetPeople(greeting: string, ...names: string[]): string {
+  return greeting + names.join('and') + '!';
+}
