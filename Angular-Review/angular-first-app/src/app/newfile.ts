@@ -72,3 +72,7 @@ const double = (x: number) => x * 2;
 const newItem = 3;
 const oldArray = [1, 2];
 const newArray = [...oldArray, newItem];
+
+//spread params object
+const oldPerson = { name: 'John' };
+const newPerson = { ...oldPerson, age: 20 };
