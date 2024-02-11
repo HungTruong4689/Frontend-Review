@@ -90,3 +90,10 @@ const url =
 
 //way 2
 const url2 = `${baseUrl}/${path_to_resource}?param=${parameter}&param2=${parameter2}`;
+
+//Generics
+function method<T>(arg: T): T {
+  return arg;
+}
+
+method<number>(1);
