@@ -76,3 +76,17 @@ const newArray = [...oldArray, newItem];
 //spread params object
 const oldPerson = { name: 'John' };
 const newPerson = { ...oldPerson, age: 20 };
+
+//Template strings
+let parameter, parameter2, baseUrl, path_to_resource;
+const url =
+  'http://path_to_domain' +
+  'path_to_resource' +
+  '?param=' +
+  parameter +
+  '=' +
+  'param2=' +
+  parameter2;
+
+//way 2
+const url2 = `${baseUrl}/${path_to_resource}?param=${parameter}&param2=${parameter2}`;
