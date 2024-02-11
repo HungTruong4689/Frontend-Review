@@ -103,3 +103,12 @@ function method2<T>(arg: T[]): T[] {
   console.log(arg.length);
   return arg;
 }
+
+class CustomPerson extends Array {}
+
+class Person {}
+
+const people: Person[] = [];
+const newPersonGeneric = new CustomPerson();
+method2<Person>(people);
+method2<CustomPerson>(newPersonGeneric);
