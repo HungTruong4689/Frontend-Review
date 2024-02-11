@@ -97,3 +97,9 @@ function method<T>(arg: T): T {
 }
 
 method<number>(1);
+
+//Generics array type
+function method2<T>(arg: T[]): T[] {
+  console.log(arg.length);
+  return arg;
+}
