@@ -112,3 +112,7 @@ const people: Person[] = [];
 const newPersonGeneric = new CustomPerson();
 method2<Person>(people);
 method2<CustomPerson>(newPersonGeneric);
+
+interface Shape {
+  area(): number;
+}
