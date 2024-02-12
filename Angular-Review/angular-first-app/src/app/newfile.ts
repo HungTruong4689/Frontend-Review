@@ -122,3 +122,51 @@ class Square implements Shape {
     return 1;
   }
 }
+class Circle implements Shape {
+  area() {
+    return 2;
+  }
+}
+
+function allAreas<T extends Shape>(...args: T[]): number {
+  let total = 0;
+  args.forEach((x) => {
+    total += x.area();
+  });
+
+  return total;
+}
+
+allAreas(new Square(), new Circle());
+
+//Classes, interfaces, and inheritance
+//Anatomy of a class
+class Car {
+  //Members
+  private distanceRun: number = 0;
+  private color: string;
+
+  constructor(private isHydrid: boolean, color: string = 'red') {
+    this.color = color;
+  }
+
+  getGasConsumption(): string {
+    return this.isHydrid ? 'Very low' : 'Very high';
+  }
+
+  drive(distance: number): void {
+    this.distanceRun += distance;
+  }
+
+  //consume static members directly
+  // not accessible from the object instances
+  // can not access other class members using the this keyword
+  // helper or factory methods
+  static honk(): string {
+    return 'HOOONK!';
+  }
+
+  get distance(): number {
+    return this.distanceRun;
+  }
+}
