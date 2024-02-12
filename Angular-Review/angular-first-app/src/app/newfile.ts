@@ -170,3 +170,17 @@ class Car {
     return this.distanceRun;
   }
 }
+
+//Interface. --> not class but a contractual schema
+interface Vehicle {
+  make: string;
+}
+
+// class Car2 implements Vehicle {
+//   //make: string;
+// }
+
+interface Exception {
+  message: string;
+  id?: number;
+}
