@@ -116,3 +116,9 @@ method2<CustomPerson>(newPersonGeneric);
 interface Shape {
   area(): number;
 }
+
+class Square implements Shape {
+  area() {
+    return 1;
+  }
+}
