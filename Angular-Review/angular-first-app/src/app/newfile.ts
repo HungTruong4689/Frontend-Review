@@ -239,3 +239,26 @@ class Sedan extends Car2 {
     this.model = model;
   }
 }
+
+//Decorators in TypeSript
+//Class Decorators
+declare type ClassDecorator = <TFunction extends Function>(
+  Target: TFunction
+) => TFunction | void;
+
+function Banana(target: Function): void {
+  target.prototype.banana = function (): void {
+    console.log('we have bananas!');
+  };
+}
+
+@Banana
+class FruitBasket {
+  //   banana() {
+  //     throw new Error('Method not implemented.');
+  //   }
+  constructor() {}
+}
+
+const basket: any = new FruitBasket();
+basket.banana();
