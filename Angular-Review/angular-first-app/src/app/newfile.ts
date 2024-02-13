@@ -184,3 +184,20 @@ interface Exception {
   message: string;
   id?: number;
 }
+
+//defer the implementation of this interface until later.
+interface DatabaseService {
+  save(order: Order): void;
+}
+
+class Order {}
+
+class OrderProcessor {
+  constructor(private databaseService: DatabaseService) {}
+
+  process(order: Order) {
+    this.databaseService.save(order);
+  }
+}
+
+// let orderProcessor = new OrderProcessor(mockLibrary.mock<DatabaseService>())
