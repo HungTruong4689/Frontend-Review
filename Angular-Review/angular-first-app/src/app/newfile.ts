@@ -201,3 +201,28 @@ class OrderProcessor {
 }
 
 // let orderProcessor = new OrderProcessor(mockLibrary.mock<DatabaseService>())
+
+//AuthService
+interface AuthService {
+  isAuthenticated(): boolean;
+}
+
+class Stuff {
+  constructor(private srv: AuthService) {}
+
+  execute() {
+    if (this.srv.isAuthenticated()) {
+    } else {
+    }
+  }
+}
+
+//Test AuthService
+class MockAuthService implements AuthService {
+  isAuthenticated(): boolean {
+    return true;
+  }
+}
+
+const srv = new MockAuthService();
+const stuff = new Stuff(srv);
