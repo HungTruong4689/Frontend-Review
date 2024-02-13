@@ -176,9 +176,12 @@ interface Vehicle {
   make: string;
 }
 
-// class Car2 implements Vehicle {
-//   //make: string;
-// }
+class Car2 implements Vehicle {
+  make!: string;
+  constructor(make: string) {
+    this.make = make;
+  }
+}
 
 interface Exception {
   message: string;
@@ -226,3 +229,13 @@ class MockAuthService implements AuthService {
 
 const srv = new MockAuthService();
 const stuff = new Stuff(srv);
+
+//Class inheritance
+class Sedan extends Car2 {
+  model!: string;
+
+  constructor(make: string, model: string) {
+    super(make);
+    this.model = model;
+  }
+}
