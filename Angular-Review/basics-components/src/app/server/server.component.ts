@@ -8,4 +8,8 @@ export class ServerComponent {
   // serverId: number = 10;
   // serverName: string = 'new name';
   userName: string = '';
+
+  resetBtn() {
+    this.userName = '';
+  }
 }
