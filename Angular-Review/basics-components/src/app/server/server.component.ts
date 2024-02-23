@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './server.component.html',
 })
 export class ServerComponent {
-  serverId: number = 10;
-  serverName: string = 'new name';
+  // serverId: number = 10;
+  // serverName: string = 'new name';
+  userName: string = '';
 }
