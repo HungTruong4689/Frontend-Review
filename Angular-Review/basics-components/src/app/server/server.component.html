@@ -16,8 +16,11 @@
   </button>
   <p *ngIf="showSecret">Display secret: {{ secret }}</p>
   <div
-    *ngFor="let item of log"
-    [ngStyle]="{ backgroundColor: item >= 5 ? 'blue' : 'green' }"
+    *ngFor="let item of log; let i = index"
+    [ngStyle]="{
+      backgroundColor: i >= 5 ? 'blue' : 'green',
+      color: 'white'
+    }"
   >
     {{ item }}
   </div>
