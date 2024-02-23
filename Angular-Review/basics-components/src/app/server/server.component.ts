@@ -10,6 +10,7 @@ export class ServerComponent {
   userName: string = '';
   secret: string = 'Luna';
   showSecret: boolean = false;
+  log = [];
 
   resetBtn() {
     this.userName = '';
@@ -17,5 +18,6 @@ export class ServerComponent {
 
   showSecretPass() {
     this.showSecret = !this.showSecret;
+    this.log.push(this.log.length + 1);
   }
 }
