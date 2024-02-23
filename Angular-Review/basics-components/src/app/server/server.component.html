@@ -10,4 +10,9 @@
   >
     Reset UserName
   </button>
+  <hr />
+  <button class="btn btn-primary" (click)="showSecretPass()">
+    Display Detail
+  </button>
+  <p *ngIf="showSecret">Display secret: {{ secret }}</p>
 </div>
