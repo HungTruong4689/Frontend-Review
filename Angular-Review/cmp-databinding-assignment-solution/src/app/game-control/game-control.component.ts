@@ -3,17 +3,16 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 @Component({
   selector: 'app-game-control',
   templateUrl: './game-control.component.html',
-  styleUrls: ['./game-control.component.css']
+  styleUrls: ['./game-control.component.css'],
 })
 export class GameControlComponent implements OnInit {
-  @Output() intervalFired = new EventEmitter<number>();
+  @Output() intervalFired = new EventEmitter<number>(); //children to parent
   interval;
   lastNumber = 0;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onStartGame() {
     this.interval = setInterval(() => {
@@ -25,5 +24,4 @@ export class GameControlComponent implements OnInit {
   onPauseGame() {
     clearInterval(this.interval);
   }
-
 }
