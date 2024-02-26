@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-server',
@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 export class ServerComponent {
   // serverId: number = 10;
   // serverName: string = 'new name';
-  userName: string = '';
+  @Input('userName') userName: string = '';
   secret: string = 'Luna';
   showSecret: boolean = false;
   log = [];
