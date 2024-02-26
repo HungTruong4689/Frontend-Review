@@ -39,6 +39,7 @@ export class BetterHighlightDirectiveDirective implements OnInit {
     //   'background-color',
     //   'transparent'
     // );
+    //set background by HostBinding
     this.backgroundColor = 'transparent';
   }
 }
