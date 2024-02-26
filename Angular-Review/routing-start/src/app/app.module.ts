@@ -18,6 +18,11 @@ const appRoutes: Routes = [
   { path: 'servers', component: ServersComponent },
 ];
 
+//html
+//absolute path /servers
+//relative path servers
+//back to the up level ../servers
+
 @NgModule({
   declarations: [
     AppComponent,
