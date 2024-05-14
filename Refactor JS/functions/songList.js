@@ -16,8 +16,8 @@ const songSeven = ['d', 'dmaj7', 'g', 'gmaj7', 'a7', 'e', 'e7']
 var songs = []
 var labels = []
 var allChords = []
-var labelCounts = []
-var labelProbabilities = []
+var labelCounts = {}
+var labelProbabilities = {}
 var chordCountsInLabels = {}
 var probabilityOfChordInLabels = {}
 
@@ -89,6 +89,13 @@ function classifyv_1(chords) {
   })
   console.log(classified)
 }
+
+//Sets
+var allChords = new Set()
+
+chords.forEach((chord) => {
+  allChords.add(chord)
+})
 
 var songList = {
   songs: [],
