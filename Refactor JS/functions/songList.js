@@ -22,7 +22,7 @@ var chordCountsInLabels = {}
 var probabilityOfChordInLabels = {}
 
 function train(chords, label) {
-  songs.push([label, chords])
+  songs.push({ label: label, chords: chords })
   labels.push(label)
   chords.forEach((chord) => {
     if (!allChords.includes(chord)) {
@@ -44,14 +44,14 @@ function setLabelProbabilities() {
 
 function setChordCountsInLabels() {
   songs.forEach(function (song) {
-    if (chordCountsInLabels[song[0]] === undefined) {
-      chordCountsInLabels[song[0]] = {}
+    if (chordCountsInLabels[song.label] === undefined) {
+      chordCountsInLabels[song.label] = {}
     }
-    song[1].forEach(function (chord) {
-      if (chordCountsInLabels[song[0]][chord] > 0) {
-        chordCountsInLabels[song[0]][chord] += 1
+    song.chords.forEach(function (chord) {
+      if (chordCountsInLabels[song.label][chord] > 0) {
+        chordCountsInLabels[song.label][chord] += 1
       } else {
-        chordCountsInLabels[song[0]][chord] = 1
+        chordCountsInLabels[song.label][chord] = 1
       }
     })
   })
