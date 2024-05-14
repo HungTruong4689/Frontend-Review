@@ -16,8 +16,8 @@ const songSeven = ['d', 'dmaj7', 'g', 'gmaj7', 'a7', 'e', 'e7']
 var songs = []
 var labels = []
 var allChords = []
-var labelCounts = {}
-var labelProbabilities = {}
+var labelCounts = new Map()
+var labelProbabilities = new Map()
 var chordCountsInLabels = {}
 var probabilityOfChordInLabels = {}
 
@@ -29,16 +29,16 @@ function train(chords, label) {
       allChords.push(chord)
     }
   })
-  if (Object.keys(labelCounts).includes(label)) {
-    labelCounts[label] = labelCounts[label] + 1
+  if (Array.from(labelCounts.keys()).includes(label)) {
+    labelCounts.set(label, labelCounts.get(label) + 1)
   } else {
-    labelCounts[label] = 1
+    labelCounts.set(label, 1)
   }
 }
 
 function setLabelProbabilities() {
-  Object.keys(labelCounts).forEach(function (label) {
-    labelProbabilities[label] = labelCounts[label] / songs.length
+  labelCounts.forEach(function (_count, label) {
+    labelProbabilities[label] = labelCounts.get(label) / songs.length
   })
 }
 
@@ -74,7 +74,7 @@ setProbabilityOfChordsInLabels()
 function classifyv_1(chords) {
   const smoothing = 1.01
   console.log(labelProbabilities)
-  var classified = {}
+  var classified = new Map()
   Object.keys(labelProbabilities).forEach(function (difficulty) {
     var first = [labelProbabilities[difficulty] + smoothing]
     chords.forEach(function (chord) {
@@ -85,7 +85,7 @@ function classifyv_1(chords) {
       }
     })
 
-    classified[difficulty] = first
+    classified.set(difficulty, first)
   })
   console.log(classified)
 }
