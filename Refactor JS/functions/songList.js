@@ -246,6 +246,39 @@ const classifier = {
   },
 }
 
+//Constructor functions
+const Classifier = function () {
+  const SongList = function () {
+    this.allChords = new Set()
+    this.difficuties = ['easy', 'medium', 'hard']
+    this.songs = []
+    this.addSong = function (name, chords, difficulty) {
+      this.songs.push({
+        name,
+        chords,
+        difficulty: this.difficuties[difficulty],
+      })
+    }
+  }
+  this.songList = new SongList()
+  this.labelCounts = new Map()
+  this.labelProbabilities = new Map()
+  this.chordCountsInLabels = new Map()
+  this.smoothing = 1.01
+  this.chordCountForDifficulty = function (difficulty, testChord) {
+    return this.songList.songs.reduce((counter, song) => {
+      if (song.difficulty === difficulty) {
+        counter += song.chords.filter((chord) => {
+          return chord === testChord
+        }).length
+      }
+      return counter
+    }, 0)
+  }
+}
+
+const classifier_constructor = new Classifier()
+
 //Bringing classify into the classifier
 function classify(chords) {
   const smoothing = 1.01
