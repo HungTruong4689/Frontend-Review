@@ -38,7 +38,7 @@ function train(chords, label) {
 
 function setLabelProbabilities() {
   labelCounts.forEach(function (_count, label) {
-    labelProbabilities[label] = labelCounts.get(label) / songs.length
+    labelProbabilities.set(label, labelCounts.get(label) / songs.length)
   })
 }
 
@@ -75,8 +75,8 @@ function classifyv_1(chords) {
   const smoothing = 1.01
   console.log(labelProbabilities)
   var classified = new Map()
-  Object.keys(labelProbabilities).forEach(function (difficulty) {
-    var first = [labelProbabilities[difficulty] + smoothing]
+  labelProbabilities.forEach(function (_probabilities, difficulty) {
+    var first = [labelProbabilities.get(difficulty) + smoothing]
     chords.forEach(function (chord) {
       var probabilityOfChordInLabel =
         probabilityOfChordInLabels[difficulty][chord]
@@ -96,6 +96,16 @@ var allChords = new Set()
 chords.forEach((chord) => {
   allChords.add(chord)
 })
+
+function trainAll() {
+  train(imagine, easy)
+  train(anotherSong, easy)
+  train(oneMoreSong, easy)
+  train(songFour, immediate)
+  train(songFive, immediate)
+  train(songSix, hard)
+  train(songSeven, hard)
+}
 
 var songList = {
   songs: [],
