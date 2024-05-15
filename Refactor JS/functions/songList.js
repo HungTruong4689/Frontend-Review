@@ -277,6 +277,23 @@ const Classifier = function () {
   }
 }
 
+//constructor functioon
+class Secret {
+  constructor() {
+    this.normalInfo = 'this is normal'
+    const secret = 'sekrit'
+    const secretFunction = function () {
+      return secret
+    }
+    this.notSecret = function () {
+      return secret
+    }
+    totallyNotSecret = "I'm defined in the global scope"
+  }
+}
+
+const s = new Secret()
+
 const classifier_constructor = new Classifier()
 
 //Bringing classify into the classifier
