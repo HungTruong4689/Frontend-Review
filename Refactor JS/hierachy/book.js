@@ -97,3 +97,6 @@ const englishWord = Object.create(word)
 englishWord.word = 'dog'
 englishWord.language = "English"
 englishWord.lookUpUrl = `https://en.wikipedia.org/wiki/`
+
+//ES2015
+const englishWord2 = Object.assign(Object.create(word),{word:"dog",language: "English", lookUpUrl:`https://en.wikipedia.org/wiki/` })
