@@ -38,7 +38,62 @@ class Word{
 }
 
 //version extend
-class EnglishWord1 extends Word{};
-class JapaneseWord1 extends Work{}
+class EnglishWord1 extends Word{
+    constructor(word){
+        super(word)
+        this.language = "English"
+    }
+};
+class JapaneseWord1 extends Word{
+    constructor(word){
+        super(word)
+        this.language = "Japanese"
+    }
+}
 
-//instance of 
+class Word2{
+    constructor(word,language,lookUpUrl){
+        this.word = word
+        this.language = language
+        this.lookUpUrl = lookUpUrl
+    }
+
+    //instance of
+    lookUp(){
+        return this.lookUpUrl + this.word
+    }
+    count(){
+        return this.word.length;
+    }
+}
+
+class EnglishWord2 extends Word2{
+    constructor(word){
+        super(word)
+        this.language = "English"
+        this.lookUpUrl = `https://en.wikipedia.org/wiki/`
+    }
+};
+
+class JapaneseWord2 extends Word2{
+    constructor(word){
+        super(word)
+        this.language = "Japanese"
+        this.lookUpUrl = `http://jisho.org/search/`
+    }
+}
+
+//Object Literals
+const word = {
+    count(){
+        return this.word.length
+    },
+    lookup(){
+        return this.lookUpUrl + this.word
+    }
+}
+
+const englishWord = Object.create(word)
+englishWord.word = 'dog'
+englishWord.language = "English"
+englishWord.lookUpUrl = `https://en.wikipedia.org/wiki/`
