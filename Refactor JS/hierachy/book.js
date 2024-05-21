@@ -100,3 +100,32 @@ englishWord.lookUpUrl = `https://en.wikipedia.org/wiki/`
 
 //ES2015
 const englishWord2 = Object.assign(Object.create(word),{word:"dog",language: "English", lookUpUrl:`https://en.wikipedia.org/wiki/` })
+
+//Factory function
+const englishWordFactory = (theWord) =>{
+    return Object.assign(Object.create(word),{
+        word:theWord,
+        language: "English", 
+        lookUpUrl:`https://en.wikipedia.org/wiki/` 
+    })
+}
+
+//prototype
+japaneseWord.prototype = word
+word.reportLanguage = function(){
+    return `The language is : ${this.language}`
+}
+
+//Recap
+//Object literals
+//Classes (uses new)
+//constructor functions (uses new)
+//Factory function (use returns as object)
+//Object.assign and Object.create
+
+const myPet = Object.assign(Object.create(animal),barky,bitey)
+
+//other way
+const myPet2 = Object.assign({},animal,barky,bitey)
+
+animal.hasBankAccount = false
