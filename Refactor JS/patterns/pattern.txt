@@ -2,7 +2,7 @@
 
 - Template method
 - Strategy
-- Strategy
+- State
 - null object
 - Decorator (Wrapper section)
 - Adapter ("Wrapper" section)

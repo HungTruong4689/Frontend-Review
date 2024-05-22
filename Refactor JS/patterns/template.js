@@ -19,3 +19,22 @@ const personTwo = new Person("binary oblivious")
 [personOne,personTwo].forEach(person => {
     person.log(10)
 });
+
+//A Functional Variant
+
+function log(person,number){
+    console.log(person.whatIs(number))
+}
+class BinaryKnower{ 
+    whatIs(number){
+        
+        return Number('0b' + number)
+    }
+}
+
+class BinaryOblivious{ 
+    whatIs(number){
+        return number
+        
+    }
+}
