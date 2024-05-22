@@ -1,37 +1,44 @@
 class Person{
-    constructor(readKnowlegde,andKnowledge,xorKnowledge){
-        this.read = readKnowlegde
-        this.and = andKnowledge
-        this.xor = xorKnowledge
+    constructor(binaryKnowlegde){
+        this.binaryKnowlegde = binaryKnowlegde
+        
     }
 }
 
-const binary = {
-    readAware(number){
+const binaryAwareness = {
+    read(number){
         return Number('0b' + number)
     },
-    readOblivious(number){
-        return number
-    },
-    andAware(numberOne,numberTwo){
+    
+    and(numberOne,numberTwo){
         return numberOne & numberTwo
     },
-    andOblivious(numberOne,numberTwo){
-        return "unknown"
-    },
-    xorAware(numberOne,numberTwo){
+    
+    xor(numberOne,numberTwo){
         return numberOne ^ numberTwo
     },
-    xorOblivious(numberOne,numberTwo){
+    
+}
+const binaryObliviousness = {
+    
+    read(number){
+        return number
+    },
+    
+    and(numberOne,numberTwo){
+        return "unknown"
+    },
+
+    xor(numberOne,numberTwo){
         return "unknown"
     },
 }
 
-const personOne = new Person(binary.readAware,binary.andAware,binary.xorAware)
-const personTwo = new Person(binary.readOblivious,binary.andOblivious,binary.xorOblivious)
+const personOne = new Person(binaryAwareness)
+const personTwo = new Person(binaryObliviousness)
 
 [personOne,personTwo].forEach(person => {
-    console.log(person.read(10))
-    console.log(person.and(2,3))
-    console.log(person.xor(2,3))
+    console.log(person.binaryKnowlegde.read(10))
+    console.log(person.binaryKnowlegde.and(2,3))
+    console.log(person.binaryKnowlegde.xor(2,3))
 });
