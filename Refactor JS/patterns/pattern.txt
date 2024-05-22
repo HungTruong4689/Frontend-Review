@@ -1,0 +1,13 @@
+## Template
+
+- Template method
+- Strategy
+- Strategy
+- null object
+- Decorator (Wrapper section)
+- Adapter ("Wrapper" section)
+- Facade
+
+1. Save and check the code into version control
+2. Make a small change
+3. Repeat steps 1 and 2 until you're done
