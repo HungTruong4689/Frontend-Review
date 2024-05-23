@@ -1,7 +1,11 @@
 class Person{
     constructor(binaryKnowlegde){
-        this.binaryKnowlegde = binaryKnowlegde
+        this.binaryKnowlegde = Object.create(Object.assign({person:this},binaryKnowlegde))
         
+    };
+
+    change(binaryKnowlegde){
+        this.binaryKnowlegde = Object.create(Object.assign({person:this},binaryKnowlegde))
     }
 }
 
@@ -17,6 +21,9 @@ const binaryAwareness = {
     xor(numberOne,numberTwo){
         return numberOne ^ numberTwo
     },
+    forget(){
+        this.person.change(binaryObliviousness)
+    }
     
 }
 const binaryObliviousness = {
@@ -32,6 +39,9 @@ const binaryObliviousness = {
     xor(numberOne,numberTwo){
         return "unknown"
     },
+    forget(){
+        this.person.change(binaryAwareness)
+    }
 }
 
 const personOne = new Person(binaryAwareness)
