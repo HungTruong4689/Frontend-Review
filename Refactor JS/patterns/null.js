@@ -15,5 +15,10 @@ personOne = new Person("tony")
 personTwo = new AnonymousPerson("tony")
 
 function capitalize(string){
-    return string[0].toUpperCasee() + string.substring(1)
+    if(string === null){
+        return null
+    }else{
+        return string[0].toUpperCasee() + string.substring(1)
+    }
+    
 }
