@@ -17,11 +17,27 @@ console.log(theResult)
 setTimeout(()=>{
     console.log("the chicken")}, 2)
     console.log("the egg") //print first
-    setTimeout(()=>{
+setTimeout(()=>{
         console.log("the chicken 2")}, 0)
-        setTimeout(()=>{
+setTimeout(()=>{
             console.log("the chicken 3")}, 0)
            
-            setTimeout(()=>{
+setTimeout(()=>{
                 console.log("the chicken 4")}, 0)
+
+
+function printBody(chunk){
+    console.log(chunk.toString())
+}
+
+http.get('https://refactoringjs.com', (result)=>{
+    result.on('data', (chunk)=>{
+        printBody(chunk)
+    })
+})
+
+function getResults(result){
+    
+    result.on('data', printBody)
+}
                 
