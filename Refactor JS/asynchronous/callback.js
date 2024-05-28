@@ -1,3 +1,7 @@
+function addOne(addend,callback){
+    callback(addend + 1);
+}
+
 function three(callback){
     setTimeout(function(){
         
@@ -5,8 +9,6 @@ function three(callback){
     },500);
 }
 
-function addOne(addend){
-    console.log(addend + 1);
-}
+
 
 addOne(three())
