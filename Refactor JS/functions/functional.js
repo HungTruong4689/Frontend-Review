@@ -32,20 +32,35 @@ function factorial(number) {
 }
 factorial(3)
 
-const lookupTable = {}
-function memoizedFactorial(number) {
+function memoizedFactorial(number, lookupTable = {}) {
   if (number in lookupTable) {
+    console.log('cached')
     return lookupTable[number]
   } else {
+    console.log('calculating')
     var reduceValue
     if (number < 2) {
       reduceValue = 1
     } else {
-      reduceValue = number * memoizedFactorial(number - 1)
+      reduceValue =
+        number * memoizedFactorial(number - 1, lookupTable)['result']
     }
     lookupTable[number] = reduceValue
-    return reduceValue
+    return { result: reduceValue, lookupTable: lookupTable }
   }
 }
 
 memoizedFactorial(3)
+
+//avoiding reassignment in conditional tests
+function func(x) {
+  if (x >= 2) {
+    return x + 2
+  } else {
+    return x
+  }
+}
+
+function func(x) {
+  return x >= 2 ? x + 7 : x
+}
